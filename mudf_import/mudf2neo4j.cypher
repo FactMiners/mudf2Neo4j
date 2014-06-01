@@ -1,6 +1,8 @@
 // File: mudf2neo4j.cypher
 // Prepared by: www.FactMiners.org (@FactMiners, www.FactMiners.org) and Jim Salmons (@Jim_Salmons)
 // Prepared for: National Day of Civic Hacking 2014
+// Version: 0.1
+// Date: 01 June 2014
 // 
 //
 // The Cypher queries in this file can be copied and pasted into a Neo4j 
@@ -103,10 +105,11 @@ CREATE
 // MUDF fields to the CREATE statement below. Refer to the PDF document that
 // details the MUDF file.
 //
-// USING PERIODIC COMMIT
 WITH count(*) as not_used
+// If you are unable to import this file via the remote URL, you will need to download the source 
+// file and edit this path to point to your local copy.
 LOAD CSV WITH HEADERS FROM
-  'file:U:\\Jambo\\Documents\\_DevProjects\\!_FactMiners\\museums_app\\mudf14q3pub_TitleCase.csv'
+  'file:https://github.com/FactMiners/mudf2Neo4j/blob/master/mudf_import/mudf14q3pub_TitleCase.csv'
   AS line
 CREATE (lam:Museum {
 	mid : line.MID,
