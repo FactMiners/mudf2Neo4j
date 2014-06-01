@@ -43,6 +43,7 @@ SCI 	| Science & Technology Museums & Planetariums
 ZAW 	| Zoos, Aquariums, & Wildlife Conservation
 
 __INCOMECD__
+
 Code 	| Description
 -------- | ---------: 
 0 	| $0 
@@ -57,6 +58,7 @@ Code 	| Description
 9 	| $50,000,000 to greater
 
 __LOCALE4__
+
 Code 	| Name 		| Description 
 -------- | ----------- | --------
 1		| City 		| Territory inside an urbanized area and inside a principal city
@@ -65,6 +67,7 @@ Code 	| Name 		| Description
 4		| Rural 	| Census-defined rural territory that is outside an urbanized area or urbanized cluster.
 
 __AAMREG__
+
 Code 	| Name 			| Description 
 -------- | -----------	| --------
 1		| New England	| Connecticut, Massachusetts, Maine, New Hampshire, Rhode Island, Vermont 
