@@ -18,9 +18,9 @@ The files in this directory include:
 
 ## Data Model and Import Strategy
 
-![A Sample Cypher Query on the MUDF dataset](/images/museums_universe_query_sample.png)
+![A Sample Cypher Query on the MUDF dataset](https://raw.githubusercontent.com/FactMiners/mudf2Neo4j/master/mudf_import/images/museums_universe_query_sample.png)
 
-The supplied CSV file contains descriptive information on over 35,000 U.S.-based GLAMs (Galleries, Libraries, Archives, and Museums, etc.). The data is gathered from a variety of sources. The data in the original CSV is -- for some good reason, we suppose -- in ALL CAPS. As we intend to use this dataset in user-friendly apps and educational materials, we performed a bulk curation on the source file to provide "Title Case" to the appropriate fields/columns. In addition, we did a bulk find and replace to tweak the ordinal refereces, e.g. 1st, 2nd, 3rd from the Title Cased 1St, 2Nd, 3Rd.
+The supplied CSV file contains descriptive information on over 35,000 U.S.-based GLAMs (Galleries, Libraries, Archives, and Museums, etc.). The data is gathered from a variety of sources. The data in the original CSV is -- for some good reason, we suppose -- in ALL CAPS. As we intend to use this dataset in user-friendly apps and educational materials, we performed a bulk curation on the source file to provide "Title Case" to the appropriate fields/columns. In addition, we did a bulk find and replace to tweak the ordinal references, e.g. 1st, 2nd, 3rd from the Title Cased 1St, 2Nd, 3Rd.
 
 The MUDF Documentation PDF details the source and data field format of each column in the CSV file. A number of these fields are fine-grained bits related to demographic and geo-location information used for policy and program administration. Any field that was sufficiently obscure as to not be readily needed in a user-based "information discovery" app was excluded from the import. There are comments in the import script detailing where and how easy it is to adjust the data import configuration.
 
@@ -41,8 +41,8 @@ STATE | Address institution, State
 ZIP5 | Address institution, Postal zip code 
 PHONE | Institution phone number 
 WEBURL | Institution website address 
-LATITUDE | Latitude of institution’s address; this field consists of two integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
-LONGITUDE | Longitude of institution’s address; this field consists of a negative sign, three integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
+LATITUDE | Latitude of institution's address; this field consists of two integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
+LONGITUDE | Longitude of institution's address; this field consists of a negative sign, three integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
 
 #### The Four 'Node-ified' Properties
 
