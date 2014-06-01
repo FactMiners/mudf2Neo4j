@@ -30,6 +30,8 @@ The four "node-ified" columns in the MUDF file are as follows...
 
 __DISCIPL__
 
+Each Discipline node represents an "archetype" node for a Museum discipline or type.
+
 Code 	| Discipline
 -------- | ----------- 
 ART 	| Art Museums 
@@ -42,7 +44,11 @@ NAT 	| Natural History & Natural Science Museums
 SCI 	| Science & Technology Museums & Planetariums 
 ZAW 	| Zoos, Aquariums, & Wildlife Conservation
 
+Each Museum node will have one IS_TYPE relationship link to its designated Discipline.
+
 __INCOMECD__
+
+Income Codes relate to the amount of income shown on the most recent Form 990 series return filed by the organization. Information comes from Internal Revenue Service (IRS) Business Master File, March, 2014.
 
 Code 	| Description
 -------- | ---------: 
@@ -57,7 +63,11 @@ Code 	| Description
 8 	| $10,000,000 to $49,999,999
 9 	| $50,000,000 to greater
 
+Each Museum node will have one IN_RANGE relationship link to its designated Income_Range. (This field is a convenient but potentially deceptive proxy property for a museum's "size" or "scope". It should be noted that some small museums may be "well-heeled" while large museums may have very small revenue streams. There is not field that explicitly details the visitor/contact scale of an institution.)
+
 __LOCALE4__
+
+ National Center for Education Statistics (NCES) Urban-Centric Locale Codes classification; based on geocoded address of institution. Additional information can be found at the following site: https://nces.ed.gov/ccd/rural_locales.asp 
 
 Code 	| Name 		| Description 
 -------- | ----------- | --------
@@ -66,7 +76,11 @@ Code 	| Name 		| Description
 3		| Town 		| Territory inside an urban cluster that is outside an urbanized area 
 4		| Rural 	| Census-defined rural territory that is outside an urbanized area or urbanized cluster.
 
+Each Museum node will have one IN_LOCALE relationship link to its designated Locale.
+
 __AAMREG__
+
+Museum Regions are determined by the American Alliance of Museums (AAM). Additional information can be found at the following site: http://www.aam-us.org/. 
 
 Code 	| Name 			| Description 
 -------- | -----------	| --------
@@ -76,3 +90,21 @@ Code 	| Name 			| Description
 4		| Midwest		| Iowa, Illinois, Indiana, Michigan, Minnesota, Missouri, Ohio, Wisconsin 
 5		| Mount Plains 	| Colorado, Kansas, Montana, North Dakota, Nebraska, New Mexico, Oklahoma, South Dakota, Texas, Wyoming 
 6		| Western		| Alaska, Arizona, California, Hawaii, Idaho, Nevada, Oregon, Utah, Washington
+
+Each Museum node will have one IN_REGION relationship link to its designated AAM (American Association of Museums) region.
+
+The "user-friendly" columns selected for the default import are as follows...
+
+Column | Description
+------ | ------
+MID | Unique museum identifier 
+NAME | Name of institution 
+ALTNAME | Alternative name of institution 
+ADDRESS | Address institution, Street address 
+CITY | Address institution, City 
+STATE | Address institution, State 
+ZIP5 | Address institution, Postal zip code 
+PHONE | Institution phone number 
+WEBURL | Institution website address 
+LATITUDE | Latitude of institution’s address; this field consists of two integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
+LONGITUDE | Longitude of institution’s address; this field consists of a negative sign, three integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
