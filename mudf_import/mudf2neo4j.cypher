@@ -109,7 +109,7 @@ WITH count(*) as not_used
 // If you are unable to import this file via the remote URL, you will need to download the source 
 // file and edit this path to point to your local copy.
 LOAD CSV WITH HEADERS FROM
-  'file:https://github.com/FactMiners/mudf2Neo4j/blob/master/mudf_import/mudf14q3pub_TitleCase.csv'
+  'file:https://raw.githubusercontent.com/FactMiners/mudf2Neo4j/master/mudf_import/mudf14q3pub_TitleCase.csv'
   AS line
 CREATE (lam:Museum {
 	mid : line.MID,

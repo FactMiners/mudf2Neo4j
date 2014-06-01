@@ -18,11 +18,39 @@ The files in this directory include:
 
 ## Data Model and Import Strategy
 
+++++
+<div style="float: right; width: 320px;"><a href="http://www.softalkapple.com/issue_profiles">
+++++
+![A Sample Cypher Query on the MUDF dataset](/images/museums_universe_query_sample.png)
+++++
+</a></div>
+++++
+
 The supplied CSV file contains descriptive information on over 35,000 U.S.-based GLAMs (Galleries, Libraries, Archives, and Museums, etc.). The data is gathered from a variety of sources. The data in the original CSV is -- for some good reason, we suppose -- in ALL CAPS. As we intend to use this dataset in user-friendly apps and educational materials, we performed a bulk curation on the source file to provide "Title Case" to the appropriate fields/columns. In addition, we did a bulk find and replace to tweak the ordinal refereces, e.g. 1st, 2nd, 3rd from the Title Cased 1St, 2Nd, 3Rd.
 
 The MUDF Documentation PDF details the source and data field format of each column in the CSV file. A number of these fields are fine-grained bits related to demographic and geo-location information used for policy and program administration. Any field that was sufficiently obscure as to not be readily needed in a user-based "information discovery" app was excluded from the import. There are comments in the import script detailing where and how easy it is to adjust the data import configuration.
 
 ### The Data Model
+
+__Each 'Museum' and its Properties__
+
+Each row in the supplied MUDF file has information about a given 'museum' (so many flavors - See 'Discipline'). The "user-friendly" columns selected for the default import are as follows...
+
+Column | Description
+------ | ------
+MID | Unique museum identifier 
+NAME | Name of institution 
+ALTNAME | Alternative name of institution 
+ADDRESS | Address institution, Street address 
+CITY | Address institution, City 
+STATE | Address institution, State 
+ZIP5 | Address institution, Postal zip code 
+PHONE | Institution phone number 
+WEBURL | Institution website address 
+LATITUDE | Latitude of institution’s address; this field consists of two integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
+LONGITUDE | Longitude of institution’s address; this field consists of a negative sign, three integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
+
+#### The Four 'Node-ified' Properties
 
 Four of the columns of interest are filled with codes that relate a given museum to a small number of property values that can be valuably "node-ified." That is, we're creating found sets of labeled Neo4j nodes that represent these distinct values and provide an explicit relationship link to connect the museum to its associated value -- as opposed to using a node property.
 
@@ -92,19 +120,3 @@ Code 	| Name 			| Description
 6		| Western		| Alaska, Arizona, California, Hawaii, Idaho, Nevada, Oregon, Utah, Washington
 
 Each Museum node will have one IN_REGION relationship link to its designated AAM (American Association of Museums) region.
-
-The "user-friendly" columns selected for the default import are as follows...
-
-Column | Description
------- | ------
-MID | Unique museum identifier 
-NAME | Name of institution 
-ALTNAME | Alternative name of institution 
-ADDRESS | Address institution, Street address 
-CITY | Address institution, City 
-STATE | Address institution, State 
-ZIP5 | Address institution, Postal zip code 
-PHONE | Institution phone number 
-WEBURL | Institution website address 
-LATITUDE | Latitude of institution’s address; this field consists of two integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
-LONGITUDE | Longitude of institution’s address; this field consists of a negative sign, three integers and six decimal places, with an explicit decimal point, decimal degree format, World Geodetic System Datum 1984; determined by geocoding service. 
