@@ -18,13 +18,7 @@ The files in this directory include:
 
 ## Data Model and Import Strategy
 
-++++
-<div style="float: right; width: 320px;"><a href="http://www.softalkapple.com/issue_profiles">
-++++
 ![A Sample Cypher Query on the MUDF dataset](/images/museums_universe_query_sample.png)
-++++
-</a></div>
-++++
 
 The supplied CSV file contains descriptive information on over 35,000 U.S.-based GLAMs (Galleries, Libraries, Archives, and Museums, etc.). The data is gathered from a variety of sources. The data in the original CSV is -- for some good reason, we suppose -- in ALL CAPS. As we intend to use this dataset in user-friendly apps and educational materials, we performed a bulk curation on the source file to provide "Title Case" to the appropriate fields/columns. In addition, we did a bulk find and replace to tweak the ordinal refereces, e.g. 1st, 2nd, 3rd from the Title Cased 1St, 2Nd, 3Rd.
 

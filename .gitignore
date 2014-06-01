@@ -1,0 +1,5 @@
+# ignore Thumbs.db files
+Thumbs.db
+
+# just in case I've edited graphic files with PSP in place! :-)
+*.psd
