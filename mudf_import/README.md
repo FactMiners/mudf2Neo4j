@@ -16,21 +16,22 @@ The files in this directory include:
 
 > NOTE: The __mudf2neo4j.cypher__ script assumes you are running Neo4j 2.1 or later as it uses the LOAD CSV command introduced in 2.1.
 
-== Data Model and Import Strategy
+## Data Model and Import Strategy
 
 The supplied CSV file contains descriptive information on over 35,000 U.S.-based GLAMs (Galleries, Libraries, Archives, and Museums, etc.). The data is gathered from a variety of sources. The data in the original CSV is -- for some good reason, we suppose -- in ALL CAPS. As we intend to use this dataset in user-friendly apps and educational materials, we performed a bulk curation on the source file to provide "Title Case" to the appropriate fields/columns. In addition, we did a bulk find and replace to tweak the ordinal refereces, e.g. 1st, 2nd, 3rd from the Title Cased 1St, 2Nd, 3Rd.
 
 The MUDF Documentation PDF details the source and data field format of each column in the CSV file. A number of these fields are fine-grained bits related to demographic and geo-location information used for policy and program administration. Any field that was sufficiently obscure as to not be readily needed in a user-based "information discovery" app was excluded from the import. There are comments in the import script detailing where and how easy it is to adjust the data import configuration.
 
-=== The Data Model
+### The Data Model
 
 Four of the columns of interest are filled with codes that relate a given museum to a small number of property values that can be valuably "node-ified." That is, we're creating found sets of labeled Neo4j nodes that represent these distinct values and provide an explicit relationship link to connect the museum to its associated value -- as opposed to using a node property.
 
 The four "node-ified" columns in the MUDF file are as follows...
 
 __DISCIPL__
+
 Code 	| Discipline
---------|----------- 
+-------- | ----------- 
 ART 	| Art Museums 
 BOT 	| Arboretums, Botanical Gardens, & Nature Centers 
 CMU 	| Children's Museums 
@@ -43,7 +44,7 @@ ZAW 	| Zoos, Aquariums, & Wildlife Conservation
 
 __INCOMECD__
 Code 	| Description
---------|--------- 
+-------- | ---------: 
 0 	| $0 
 1 	| $1 to $9,999 
 2 	| $10,000 to $24,999 
@@ -57,7 +58,7 @@ Code 	| Description
 
 __LOCALE4__
 Code 	| Name 		| Description 
---------|-----------|--------
+-------- | ----------- | --------
 1		| City 		| Territory inside an urbanized area and inside a principal city
 2		| Suburb 	| Territory inside an urbanized area but outside a principal city  
 3		| Town 		| Territory inside an urban cluster that is outside an urbanized area 
@@ -65,7 +66,7 @@ Code 	| Name 		| Description
 
 __AAMREG__
 Code 	| Name 			| Description 
---------|-----------	|--------
+-------- | -----------	| --------
 1		| New England	| Connecticut, Massachusetts, Maine, New Hampshire, Rhode Island, Vermont 
 2		| Mid-Atlantic 	| District of Columbia, Delaware, Maryland, New Jersey, New York, Pennsylvania 
 3		| Southeastern	| Alabama, Arkansas, Florida, Georgia, Kentucky, Louisiana, Mississippi, North Carolina, South Carolina, Tennessee, Virginia, West Virginia
