@@ -114,3 +114,15 @@ Code 	| Name 			| Description
 6		| Western		| Alaska, Arizona, California, Hawaii, Idaho, Nevada, Oregon, Utah, Washington
 
 Each Museum node will have one IN_REGION relationship link to its designated AAM (American Association of Museums) region.
+
+### If all goes well...
+
+If these import queries run as intended, the feedback message you see (assuming you've kept the default field configuration) will be as follows: _Added 35,173 labels, created 35,173 nodes, set 386,652 properties, created 102,276 relationships..._
+
+## Going Forward
+
+This dataset is now available for members of the Neo4j community to use for GraphGist education and training as well as exploratory app development.
+
+For our part, we'll next bring this dataset into a Structr CMS instance (www.Structr.org) in preparation for exploring Structr-based mobile app development. Beside our interest in 'stock' mobile app development, we're particularly interested in experimenting with the Wit.AI service for voice-based mobile app control and editing.
+
+-- End README.md --
